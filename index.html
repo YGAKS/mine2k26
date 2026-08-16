@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Itzyga.mine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600;700&family=Reenie+Beanie&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Loading Screen Awal -->
+    <div class="loader-screen" id="loaderScreen">
+        <div class="loader-text-wrapper">
+            <span class="loader-text-bg">Itzyga</span>
+            <span class="loader-text-fill" id="loaderFill">Itzyga</span>
+        </div>
+    </div>
+
+    <div class="bg-circles">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+        <div class="circle circle-3"></div>
+    </div>
+
+    <header>
+        <nav class="navbar" id="navbar">
+            <a href="#home" class="nav-logo">Itzyga.</a>
+
+            <ul class="nav-menu" id="desktopMenu">
+                <li><a href="#home" class="nav-item active">home</a></li>
+                <li><a href="#about" class="nav-item">about</a></li>
+                <li><a href="#project" class="nav-item">project</a></li>
+                <li><a href="#contact" class="nav-item">contact</a></li>
+            </ul>
+
+            <div class="nav-right">
+                <button class="hamburger" id="hamburgerBtn" aria-label="Toggle Menu">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M4 6h16v2H4V6zm0 5h16v2H4v-2zm0 5h16v2H4v-2z"/>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-header">
+            <button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Close Menu">
+                <svg viewBox="0 0 24 24">
+                    <path d="M18.3 5.71a.996.996 0 00-1.41 0L12 10.59 7.11 5.7a.996.996 0 10-1.41 1.41L10.59 12 5.7 16.89a.996.996 0 101.41 1.41L12 13.41l4.89 4.89a.996.996 0 001.41-1.41L13.41 12l4.89-4.89c.38-.38.38-1.02 0-1.4z"/>
+                </svg>
+            </button>
+        </div>
+        <a href="#home" class="mobile-link nav-item active"><span class="bullet">•</span>home</a>
+        <a href="#about" class="mobile-link nav-item"><span class="bullet">•</span>about</a>
+        <a href="#project" class="mobile-link nav-item"><span class="bullet">•</span>project</a>
+        <a href="#contact" class="mobile-link nav-item"><span class="bullet">•</span>contact</a>
+    </div>
+
+    <section class="snap-page hero-section" id="home">
+        <div class="hero-top"></div>
+        <div class="hero-bottom"></div>
+
+<div class="hero-grid-bg">
+    <div class="grid-col grid-col-up">
+        <div class="grid-item" style="background-image: url('img/p1.png');"></div>
+        <div class="grid-item" style="background-image: url('img/p2.png');"></div>
+        <div class="grid-item" style="background-image: url('img/p3.png');"></div>
+        <div class="grid-item" style="background-image: url('img/p1.png');"></div>
+        <div class="grid-item" style="background-image: url('img/p2.png');"></div>
+        <div class="grid-item" style="background-image: url('img/p3.png');"></div>
+    </div>
+    <div class="grid-col grid-col-down">
+        <div class="grid-item" style="background-image: url('img/p2.png');"></div>
+        <div class="grid-item" style="background-image: url('img/p3.png');"></div>
+        <div class="grid-item" style="background-image: url('img/p1.png');"></div>
+        <div class="grid-item" style="background-image: url('img/p2.png');"></div>
+        <div class="grid-item" style="background-image: url('img/p3.png');"></div>
+        <div class="grid-item" style="background-image: url('img/p1.png');"></div>
+    </div>
+    <div class="grid-col grid-col-up">
+        <div class="grid-item" style="background-image: url('img/p3.png');"></div>
+        <div class="grid-item" style="background-image: url('img/p1.png');"></div>
+        <div class="grid-item" style="background-image: url('img/p2.png');"></div>
+        <div class="grid-item" style="background-image: url('img/p3.png');"></div>
+        <div class="grid-item" style="background-image: url('img/p1.png');"></div>
+        <div class="grid-item" style="background-image: url('img/p2.png');"></div>
+    </div>
+</div>
+
+        <h1 class="hero-title">Itzyga.</h1>
+
+        <div class="scroll-down-btn" id="scrollDownBtn" role="button" aria-label="Next Section">
+            <svg viewBox="0 0 24 24">
+                <path d="M12 15.5l-6-6 1.41-1.41L12 12.67l4.59-4.58L18 9.5l-6 6z"/>
+            </svg>
+        </div>
+    </section>
+
+    <section class="snap-page about-section" id="about">
+        <div class="about-signature-bg">Itzyga</div>
+
+        <div class="about-container">
+            <div class="badge-container">
+                <div class="badge">Karawang</div>
+                <div class="badge">27 March 2008</div>
+                <div class="badge">Now in Bogor</div>
+            </div>
+
+            <h2 class="scramble-title" data-original="My name is <br> Yoga Kusmara">
+              My name is <br> Yoga Kusmara
+            </h2>
+
+            <p class="about-desc">
+                Saya seorang lulusan smk TH2026 di Pelita Ciampea 2 Bogor. Saya hobi atau bermimpi menjadi desainer grafis dan IT developer frontend dan sejenisnya.
+            </p>
+
+            <div class="about-grid">
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <svg class="info-card-icon" viewBox="0 0 24 24">
+                            <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/>
+                        </svg>
+                        <h4>Education</h4>
+                    </div>
+                    <p>Smk Pelita Ciampea 2 - TJKT Fresh graduate 26</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <svg class="info-card-icon" viewBox="0 0 24 24">
+                            <path d="M7 2v11h3v9l7-12h-4l4-8H7z"/>
+                        </svg>
+                        <h4>Core Skills</h4>
+                    </div>
+                    <p>Design grafis, & Frontend</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <svg class="info-card-icon" viewBox="0 0 24 24">
+                            <path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/>
+                        </svg>
+                        <h4>Experience</h4>
+                    </div>
+                    <p>Customer Support & Sales</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="snap-page project-section" id="project">
+        <div class="project-container">
+            <h2 class="scramble-title" data-original="Selected Projects">Selected Projects</h2>
+
+            <div class="project-flex-layout" id="projectLayout">
+                <div class="project-left">
+                    <div class="project-card flex-main" onclick="window.location.href='https://mineplix.my.id'">
+                        <div class="card-top-header">
+                            <span class="project-tag">main project of store</span>
+                            <svg class="arrow-icon" viewBox="0 0 24 24">
+                                <path d="M5 19L19 5M19 5H9M19 5V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="project-card-img-wrapper">
+                            <img src="img/web.png" alt="Mineplix Store" class="project-card-img">
+                        </div>
+                        <div class="project-card-body">
+                            <h3 class="project-title">mineplix.my.id</h3>
+                            <p class="project-desc">Web store project yang akan dikembangkan dan masih dalam proses manage</p>
+                        </div>
+                    </div>
+
+                    <div class="project-card flex-compact" onclick="window.location.href='https://mineplix.my.id/mineplixsmp'">
+                        <div class="card-top-header">
+                            <span class="project-tag">Minecraft Server</span>
+                            <svg class="arrow-icon" viewBox="0 0 24 24">
+                                <path d="M5 19L19 5M19 5H9M19 5V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="project-card-body">
+                            <h3 class="project-title">MineplixSMP</h3>
+                            <p class="project-desc">Server minecraft community for playing and grinding - 2026 hiatus</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-right">
+                    <div class="project-card full-height" onclick="window.location.href='https://mineplix.my.id/apps'">
+                        <div class="card-top-header">
+                            <span class="project-tag">Apps project</span>
+                            <svg class="arrow-icon" viewBox="0 0 24 24">
+                                <path d="M5 19L19 5M19 5H9M19 5V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="project-card-img-wrapper">
+                            <img src="img/apps2.png" alt="Apps Design" class="project-card-img">
+                        </div>
+                        <div class="project-card-body">
+                            <h3 class="project-title">Create and design of apps</h3>
+                            <p class="project-desc">Apps design buat hobi aja kalau waktu luang</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dots-indicator" id="dotsIndicator">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </section>
+
+    <section class="snap-page footer-section" id="contact">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <h3 class="scramble-title" data-original="Let's Connect.">Let's Connect.</h3>
+                    <p>Tertarik untuk bekerja sama atau sekadar bertegur sapa?</p>
+                </div>
+
+                <div class="footer-links">
+                    <a href="https://instagram.com" class="social-link" target="_blank" rel="noopener noreferrer">
+                        Instagram
+                        <svg viewBox="0 0 24 24">
+                            <path d="M5 19L19 5M19 5H9M19 5V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+
+                    <a href="mailto:contact@mineplix.my.id" class="social-link">
+                        Email
+                        <svg viewBox="0 0 24 24">
+                            <path d="M5 19L19 5M19 5H9M19 5V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-present">Present by Mineplix - 2026</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="scroll-top-btn" id="scrollTopBtn" role="button" aria-label="Scroll to Top">
+        <span class="scroll-text" id="scrollPercentText">0%</span>
+        <svg class="scroll-icon" viewBox="0 0 24 24">
+            <path d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"/>
+        </svg>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
