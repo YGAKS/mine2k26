@@ -1,0 +1,262 @@
+[
+  {
+    "id": "p1",
+    "badge": "POPULER",
+    "title": "CyberStore Pro",
+    "price": "Rp 899rb",
+    "description": "Tema toko online gelap modern lengkap dengan integrasi payment gateway dan animasi smooth.",
+    "tags": ["E-Commerce", "Dark UI", "Responsive"],
+    "link": "#",
+    "btnText": "Detail Tema"
+  },
+  {
+    "id": "p2",
+    "badge": "NEW",
+    "title": "Apex SaaS UI",
+    "price": "Rp 650rb",
+    "description": "Landing page produk digital & SaaS dengan navigasi floating bar dan layout ekspresif.",
+    "tags": ["SaaS & Tech", "Clean Style", "Fast Load"],
+    "link": "#",
+    "btnText": "Detail Tema"
+  },
+  {
+    "id": "p3",
+    "badge": "HOT",
+    "title": "FolioX Dark",
+    "price": "Rp 450rb",
+    "description": "Template portofolio interaktif untuk desainer, developer, dan freelancer dengan tata letak minimalis.",
+    "tags": ["Portofolio", "Minimalis", "Interactive"],
+    "link": "#",
+    "btnText": "Detail Tema"
+  },
+  {
+    "id": "p4",
+    "badge": "RECOMMENDED",
+    "title": "Nexus Corporate",
+    "price": "Rp 750rb",
+    "description": "Tema profil perusahaan modern dengan modul klaim layanan, tim, dan blog perusahaan terintegrasi.",
+    "tags": ["Company Profile", "Glass UI", "SEO Ready"],
+    "link": "#",
+    "btnText": "Detail Tema"
+  },
+  {
+    "id": "p5",
+    "badge": "BEST VALUE",
+    "title": "Vortex Gaming",
+    "price": "Rp 800rb",
+    "description": "Website tema game & esports dengan efek neon bercahaya, jadwal turnamen, dan sistem top up.",
+    "tags": ["Esports", "Neon Dark", "High Motion"],
+    "link": "#",
+    "btnText": "Detail Tema"
+  },
+  {
+    "id": "p6",
+    "badge": "CUSTOM SERVICE",
+    "title": "Full Custom Web",
+    "price": "Rp 2.5jt+",
+    "description": "Jasa pembuatan website dari nol sesuai kebutuhan Anda dengan pendekatan estetika modern.",
+    "tags": ["Custom Service", "Full Support", "Bespoke UI"],
+    "link": "komunitas.html",
+    "btnText": "Konsultasi Jasa"
+  },
+  {
+    "id": "p7",
+    "badge": "CUSTOM SERVICE",
+    "title": "Full Custom Web",
+    "price": "Rp 2.5jt+",
+    "description": "Jasa pembuatan website dari nol sesuai kebutuhan Anda dengan pendekatan estetika modern.",
+    "tags": ["Custom Service", "Full Support", "Bespoke UI"],
+    "link": "komunitas.html",
+    "btnText": "Konsultasi Jasa"
+  },
+  {
+    "id": "p8",
+    "badge": "CUSTOM SERVICE",
+    "title": "Full Custom Web",
+    "price": "Rp 2.5jt+",
+    "description": "Jasa pembuatan website dari nol sesuai kebutuhan Anda dengan pendekatan estetika modern.",
+    "tags": ["Custom Service", "Full Support", "Bespoke UI"],
+    "link": "komunitas.html",
+    "btnText": "Konsultasi Jasa"
+  },
+  {
+    "id": "p6",
+    "badge": "CUSTOM SERVICE",
+    "title": "Full Custom Web",
+    "price": "Rp 2.5jt+",
+    "description": "Jasa pembuatan website dari nol sesuai kebutuhan Anda dengan pendekatan estetika modern.",
+    "tags": ["Custom Service", "Full Support", "Bespoke UI"],
+    "link": "komunitas.html",
+    "btnText": "Konsultasi Jasa"
+  },
+  {
+    "id": "p6",
+    "badge": "CUSTOM SERVICE",
+    "title": "Full Custom Web",
+    "price": "Rp 2.5jt+",
+    "description": "Jasa pembuatan website dari nol sesuai kebutuhan Anda dengan pendekatan estetika modern.",
+    "tags": ["Custom Service", "Full Support", "Bespoke UI"],
+    "link": "komunitas.html",
+    "btnText": "Konsultasi Jasa"
+  },
+  {
+    "id": "p6",
+    "badge": "CUSTOM SERVICE",
+    "title": "Full Custom Web",
+    "price": "Rp 2.5jt+",
+    "description": "Jasa pembuatan website dari nol sesuai kebutuhan Anda dengan pendekatan estetika modern.",
+    "tags": ["Custom Service", "Full Support", "Bespoke UI"],
+    "link": "komunitas.html",
+    "btnText": "Konsultasi Jasa"
+  },
+  {
+    "id": "p6",
+    "badge": "CUSTOM SERVICE",
+    "title": "Full Custom Web",
+    "price": "Rp 2.5jt+",
+    "description": "Jasa pembuatan website dari nol sesuai kebutuhan Anda dengan pendekatan estetika modern.",
+    "tags": ["Custom Service", "Full Support", "Bespoke UI"],
+    "link": "komunitas.html",
+    "btnText": "Konsultasi Jasa"
+  },
+  {
+    "id": "p6",
+    "badge": "CUSTOM SERVICE",
+    "title": "Full Custom Web",
+    "price": "Rp 2.5jt+",
+    "description": "Jasa pembuatan website dari nol sesuai kebutuhan Anda dengan pendekatan estetika modern.",
+    "tags": ["Custom Service", "Full Support", "Bespoke UI"],
+    "link": "komunitas.html",
+    "btnText": "Konsultasi Jasa"
+  },
+  {
+    "id": "p6",
+    "badge": "CUSTOM SERVICE",
+    "title": "Full Custom Web",
+    "price": "Rp 2.5jt+",
+    "description": "Jasa pembuatan website dari nol sesuai kebutuhan Anda dengan pendekatan estetika modern.",
+    "tags": ["Custom Service", "Full Support", "Bespoke UI"],
+    "link": "komunitas.html",
+    "btnText": "Konsultasi Jasa"
+  },
+  {
+    "id": "p6",
+    "badge": "CUSTOM SERVICE",
+    "title": "Full Custom Web",
+    "price": "Rp 2.5jt+",
+    "description": "Jasa pembuatan website dari nol sesuai kebutuhan Anda dengan pendekatan estetika modern.",
+    "tags": ["Custom Service", "Full Support", "Bespoke UI"],
+    "link": "komunitas.html",
+    "btnText": "Konsultasi Jasa"
+  },
+  {
+    "id": "p6",
+    "badge": "CUSTOM SERVICE",
+    "title": "Full Custom Web",
+    "price": "Rp 2.5jt+",
+    "description": "Jasa pembuatan website dari nol sesuai kebutuhan Anda dengan pendekatan estetika modern.",
+    "tags": ["Custom Service", "Full Support", "Bespoke UI"],
+    "link": "komunitas.html",
+    "btnText": "Konsultasi Jasa"
+  },
+  {
+    "id": "p6",
+    "badge": "CUSTOM SERVICE",
+    "title": "Full Custom Web",
+    "price": "Rp 2.5jt+",
+    "description": "Jasa pembuatan website dari nol sesuai kebutuhan Anda dengan pendekatan estetika modern.",
+    "tags": ["Custom Service", "Full Support", "Bespoke UI"],
+    "link": "komunitas.html",
+    "btnText": "Konsultasi Jasa"
+  },
+  {
+    "id": "p6",
+    "badge": "CUSTOM SERVICE",
+    "title": "Full Custom Web",
+    "price": "Rp 2.5jt+",
+    "description": "Jasa pembuatan website dari nol sesuai kebutuhan Anda dengan pendekatan estetika modern.",
+    "tags": ["Custom Service", "Full Support", "Bespoke UI"],
+    "link": "komunitas.html",
+    "btnText": "Konsultasi Jasa"
+  },
+  {
+    "id": "p6",
+    "badge": "CUSTOM SERVICE",
+    "title": "Full Custom Web",
+    "price": "Rp 2.5jt+",
+    "description": "Jasa pembuatan website dari nol sesuai kebutuhan Anda dengan pendekatan estetika modern.",
+    "tags": ["Custom Service", "Full Support", "Bespoke UI"],
+    "link": "komunitas.html",
+    "btnText": "Konsultasi Jasa"
+  },
+  {
+    "id": "p6",
+    "badge": "CUSTOM SERVICE",
+    "title": "Full Custom Web",
+    "price": "Rp 2.5jt+",
+    "description": "Jasa pembuatan website dari nol sesuai kebutuhan Anda dengan pendekatan estetika modern.",
+    "tags": ["Custom Service", "Full Support", "Bespoke UI"],
+    "link": "komunitas.html",
+    "btnText": "Konsultasi Jasa"
+  },
+  {
+    "id": "p6",
+    "badge": "CUSTOM SERVICE",
+    "title": "Full Custom Web",
+    "price": "Rp 2.5jt+",
+    "description": "Jasa pembuatan website dari nol sesuai kebutuhan Anda dengan pendekatan estetika modern.",
+    "tags": ["Custom Service", "Full Support", "Bespoke UI"],
+    "link": "komunitas.html",
+    "btnText": "Konsultasi Jasa"
+  },
+  {
+    "id": "p6",
+    "badge": "CUSTOM SERVICE",
+    "title": "Full Custom Web",
+    "price": "Rp 2.5jt+",
+    "description": "Jasa pembuatan website dari nol sesuai kebutuhan Anda dengan pendekatan estetika modern.",
+    "tags": ["Custom Service", "Full Support", "Bespoke UI"],
+    "link": "komunitas.html",
+    "btnText": "Konsultasi Jasa"
+  },
+  {
+    "id": "p6",
+    "badge": "CUSTOM SERVICE",
+    "title": "Full Custom Web",
+    "price": "Rp 2.5jt+",
+    "description": "Jasa pembuatan website dari nol sesuai kebutuhan Anda dengan pendekatan estetika modern.",
+    "tags": ["Custom Service", "Full Support", "Bespoke UI"],
+    "link": "komunitas.html",
+    "btnText": "Konsultasi Jasa"
+  },
+  {
+    "id": "p6",
+    "badge": "CUSTOM SERVICE",
+    "title": "Full Custom Web",
+    "price": "Rp 2.5jt+",
+    "description": "Jasa pembuatan website dari nol sesuai kebutuhan Anda dengan pendekatan estetika modern.",
+    "tags": ["Custom Service", "Full Support", "Bespoke UI"],
+    "link": "komunitas.html",
+    "btnText": "Konsultasi Jasa"
+  },
+  {
+    "id": "p6",
+    "badge": "CUSTOM SERVICE",
+    "title": "Full Custom Web",
+    "price": "Rp 2.5jt+",
+    "description": "Jasa pembuatan website dari nol sesuai kebutuhan Anda dengan pendekatan estetika modern.",
+    "tags": ["Custom Service", "Full Support", "Bespoke UI"],
+    "link": "komunitas.html",
+    "btnText": "Konsultasi Jasa"
+  },
+  {
+    "id": "p6",
+    "badge": "CUSTOM SERVICE",
+    "title": "Full Custom Web",
+    "price": "Rp 2.5jt+",
+    "description": "Jasa pembuatan website dari nol sesuai kebutuhan Anda dengan pendekatan estetika modern.",
+    "tags": ["Custom Service", "Full Support", "Bespoke UI"],
+    "link": "komunitas.html",
+    "btnText": "Konsultasi Jasa"
+  }
+]
