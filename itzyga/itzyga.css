@@ -456,7 +456,7 @@ section.snap-page {
 
 .scroll-down-btn {
     position: absolute;
-    bottom: 30px;
+    bottom: 60px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 20;
