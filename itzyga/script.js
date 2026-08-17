@@ -12,7 +12,6 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-/* ================= LOADER PROGRESS LOGIC ================= */
 const loaderScreen = document.getElementById('loaderScreen');
 const loaderFill = document.getElementById('loaderFill');
 let loadProgress = 0;
@@ -39,12 +38,7 @@ window.addEventListener('load', () => {
     loaderFill.style.width = '100%';
 });
 
-/* ================= NAVIGATION & DOM ELEMENTS ================= */
 const navbar = document.getElementById('navbar');
-const hamburgerBtn = document.getElementById('hamburgerBtn');
-const mobileCloseBtn = document.getElementById('mobileCloseBtn');
-const mobileMenu = document.getElementById('mobileMenu');
-const mobileLinks = document.querySelectorAll('.mobile-link');
 const sections = document.querySelectorAll('section.snap-page');
 const navItems = document.querySelectorAll('.nav-item');
 const scrollTopBtn = document.getElementById('scrollTopBtn');
@@ -124,33 +118,6 @@ if (scrollTopBtn) {
     scrollTopBtn.addEventListener('click', scrollToTop);
 }
 
-function updateNavBackground(sectionId) {
-    if (sectionId === 'project') {
-        document.documentElement.style.setProperty('--nav-active-bg', 'rgba(28, 28, 28, 0.88)');
-        document.documentElement.style.setProperty('--mobile-overlay-bg', 'rgba(28, 28, 28, 0.98)');
-    } else {
-        document.documentElement.style.setProperty('--nav-active-bg', 'rgba(18, 18, 18, 0.88)');
-        document.documentElement.style.setProperty('--mobile-overlay-bg', 'rgba(18, 18, 18, 0.98)');
-    }
-}
-
-hamburgerBtn.addEventListener('click', () => {
-    mobileMenu.classList.add('active');
-    document.body.style.overflow = 'hidden';
-});
-
-mobileCloseBtn.addEventListener('click', () => {
-    mobileMenu.classList.remove('active');
-    document.body.style.overflow = '';
-});
-
-mobileLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        mobileMenu.classList.remove('active');
-        document.body.style.overflow = '';
-    });
-});
-
 const observerOptions = {
     root: null,
     rootMargin: '0px',
@@ -175,7 +142,6 @@ const observer = new IntersectionObserver((entries) => {
             });
             
             entry.target.classList.add('active-section');
-            updateNavBackground(id);
 
             navItems.forEach(item => {
                 if (item.getAttribute('href') === `#${id}`) {
@@ -210,14 +176,6 @@ sections.forEach(section => {
     observer.observe(section);
 });
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
-});
-
 const projectLayout = document.getElementById('projectLayout');
 const dots = document.querySelectorAll('.dot');
 
@@ -235,4 +193,4 @@ if (projectLayout) {
             }
         });
     });
-}
+}}
