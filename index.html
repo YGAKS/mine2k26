@@ -1,311 +1,678 @@
 <!DOCTYPE html>
-<html lang="id" data-theme="dark">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mineplix — Studio & Store</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Newsreader:ital,opsz,wght@1,6..72,400;1,500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0b0b0c;
+            --text-main: #f3f3f3;
+            --text-muted: #8e8e93;
+            --accent-blue: #007aff;
+            --figma-blue: #0ea5e9;
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --radius-full: 9999px;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --font-serif: 'Newsreader', serif;
+            --card-bg: #161618;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --brand-footer-color: rgba(255, 255, 255, 0.12);
+            --btn-bg: rgba(255, 255, 255, 0.08);
+            --btn-border: rgba(255, 255, 255, 0.15);
+            --icon-bg: #ffffff;
+            --icon-color: #000000;
+            --selection-bg: #007aff;
+            --selection-text: #ffffff;
+        }
+
+        [data-theme="light"] {
+            --bg-color: #fbfbfd;
+            --text-main: #1d1d1f;
+            --text-muted: #6e6e73;
+            --accent-blue: #007aff;
+            --figma-blue: #0ea5e9;
+            --card-bg: #f0f0f2;
+            --border-color: rgba(0, 0, 0, 0.1);
+            --brand-footer-color: rgba(0, 0, 0, 0.12);
+            --btn-bg: rgba(0, 0, 0, 0.05);
+            --btn-border: rgba(0, 0, 0, 0.12);
+            --icon-bg: #1d1d1f;
+            --icon-color: #ffffff;
+            --selection-bg: #007aff;
+            --selection-text: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, fill 0.4s ease, stroke 0.4s ease;
+        }
+
+        ::selection {
+            background-color: var(--selection-bg);
+            color: var(--selection-text);
+        }
+
+        ::-moz-selection {
+            background-color: var(--selection-bg);
+            color: var(--selection-text);
+        }
+
+        html {
+            scroll-behavior: smooth;
+            height: 100%;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            margin: 0;
+        }
+
+        .actionable {
+            transition: transform 0.15s ease, opacity 0.2s ease, color 0.2s ease, background-color 0.4s ease, border-color 0.4s ease;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .actionable:active {
+            transform: scale(0.95) !important;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            width: 100%;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            background-color: var(--bg-color);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: clamp(60px, 8vh, 72px);
+        }
+
+        .brand-logo {
+            font-size: clamp(1rem, 1.3vw, 1.25rem);
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            color: var(--text-main);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: clamp(16px, 2vw, 24px);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: clamp(16px, 2vw, 24px);
+            list-style: none;
+        }
+
+        .nav-links .nav-item {
+            font-size: clamp(0.9rem, 1.1vw, 1.05rem);
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        .nav-links .nav-item:hover {
+            color: var(--text-main);
+        }
+
+        .theme-btn {
+            background: none;
+            border: none;
+            color: var(--text-main);
+            padding: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--radius-full);
+        }
+
+        .theme-btn svg {
+            width: clamp(18px, 1.5vw, 22px);
+            height: clamp(18px, 1.5vw, 22px);
+        }
+
+        .section-hero {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            z-index: 1;
+            background-color: var(--bg-color);
+        }
+
+        .hero {
+            padding-top: 40px;
+            width: 100%;
+        }
+
+        .hero-sub {
+            font-size: clamp(1.05rem, 1.5vw, 1.35rem);
+            color: var(--text-muted);
+            max-width: 720px;
+            margin-bottom: 24px;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        .hero-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 16px 28px;
+            background-color: var(--btn-bg);
+            border-radius: var(--radius-full);
+            gap: 0.5em;
+            margin-top: 24px;
+            margin-bottom: 36px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            font-size: clamp(1.2rem, 2.2vw, 1.8rem);
+        }
+
+        .hero-btn-icon {
+            width: 1em;
+            height: 1em;
+            font-size: inherit;
+            border-radius: 50%;
+            background-color: var(--icon-bg);
+            color: var(--icon-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .hero-btn-icon svg,
+        .hero-btn-icon i {
+            width: 0.6em;
+            height: 0.6em;
+            font-size: inherit;
+        }
+
+        .hero-btn-text {
+            font-size: inherit;
+            font-weight: 600;
+            color: var(--text-main);
+            letter-spacing: -0.01em;
+            line-height: 1;
+        }
+
+        .hero-title {
+            font-size: clamp(2.4rem, 5.5vw, 4.8rem);
+            font-weight: 700;
+            line-height: 1.08;
+            letter-spacing: -0.03em;
+        }
+
+        .hero-title .serif-italic {
+            font-family: var(--font-serif);
+            font-weight: 400;
+            font-style: italic;
+            display: block;
+            margin-top: 4px;
+        }
+
+        .figma-selection-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-right: 8px;
+        }
+
+        .figma-tag {
+            position: absolute;
+            top: -20px;
+            left: -2px;
+            font-size: clamp(0.75rem, 0.9vw, 0.85rem);
+            font-weight: 600;
+            color: var(--figma-blue);
+            font-family: var(--font-sans);
+            letter-spacing: 0;
+            line-height: 1;
+        }
+
+        .figma-box {
+            position: relative;
+            outline: 1.5px solid var(--figma-blue);
+            outline-offset: 4px;
+            display: inline-block;
+        }
+
+        .figma-handle {
+            position: absolute;
+            width: 7px;
+            height: 7px;
+            background: #ffffff;
+            border: 1.5px solid var(--figma-blue);
+            border-radius: 1px;
+            z-index: 2;
+        }
+
+        .figma-handle.tl { top: -8px; left: -8px; }
+        .figma-handle.tc { top: -8px; left: 50%; transform: translateX(-50%); }
+        .figma-handle.tr { top: -8px; right: -8px; }
+        .figma-handle.ml { top: 50%; left: -8px; transform: translateY(-50%); }
+        .figma-handle.mr { top: 50%; right: -8px; transform: translateY(-50%); }
+        .figma-handle.bl { bottom: -8px; left: -8px; }
+        .figma-handle.bc { bottom: -8px; left: 50%; transform: translateX(-50%); }
+        .figma-handle.br { bottom: -8px; right: -8px; }
+
+        .figma-cursor-badge {
+            position: absolute;
+            bottom: 0;
+            left: 20px;
+            z-index: 5;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            pointer-events: none;
+        }
+
+        .figma-cursor {
+            width: 14px;
+            height: 14px;
+            color: var(--figma-blue);
+            flex-shrink: 0;
+        }
+
+        .figma-badge-pill {
+            background-color: var(--figma-blue);
+            color: #ffffff;
+            font-family: var(--font-sans);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0;
+            padding: 3px 8px;
+            border-radius: var(--radius-md);
+            white-space: nowrap;
+            line-height: 1;
+        }
+
+        .hero-spacer {
+            height: 100vh;
+            width: 100%;
+        }
+
+        .section-footer {
+            height: 100vh;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            z-index: 10;
+            background-color: var(--bg-color);
+            border-top: 1px solid var(--border-color);
+        }
+
+        .ticker-bar {
+            width: 100%;
+            background-color: var(--figma-blue);
+            padding: 14px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            display: flex;
+            flex-shrink: 0;
+        }
+
+        .ticker-track {
+            display: flex;
+            gap: 0;
+            width: max-content;
+            animation: scrollRight 25s linear infinite;
+        }
+
+        .ticker-content {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            padding-right: 24px;
+        }
+
+        .ticker-item {
+            font-size: clamp(0.85rem, 1.1vw, 1.05rem);
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: #ffffff;
+            display: inline-flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        @keyframes scrollRight {
+            0% {
+                transform: translateX(-50%);
+            }
+            100% {
+                transform: translateX(0%);
+            }
+        }
+
+        footer {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding-top: clamp(30px, 5vh, 60px);
+            padding-bottom: 0;
+            overflow: hidden;
+        }
+
+        .footer-content {
+            width: 100%;
+        }
+
+        .footer-title {
+            font-size: clamp(2.5rem, 4vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+        }
+
+        .footer-desc {
+            font-size: clamp(1.05rem, 1.4vw, 1.3rem);
+            color: var(--text-muted);
+            max-width: 680px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .footer-link-item {
+            font-size: clamp(1.4rem, 2vw, 2.2rem);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            width: fit-content;
+            color: var(--text-main);
+            text-decoration: none;
+        }
+
+        .footer-link-item svg {
+            width: clamp(20px, 1.8vw, 28px);
+            height: clamp(20px, 1.8vw, 28px);
+            stroke-width: 2.5;
+        }
+
+        .footer-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            overflow: hidden;
+        }
+
+        .footer-brand-text {
+            font-size: clamp(2.5rem, 9vw, 16rem);
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -0.03em;
+            color: var(--brand-footer-color);
+            white-space: nowrap;
+            line-height: 0.9;
+            width: 100%;
+        }
+
+        .scroll-top-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 99;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+      
+        .scroll-top-btn svg {
+            display: none;
+            width: 20px;
+            height: 20px;
+        }
+
+        .scroll-top-btn.completed svg {
+            display: block;
+        }
+
+        .scroll-top-btn.completed .scroll-text {
+            display: none;
+        }
+    </style>
 </head>
 <body>
 
-    <div class="ambient-bg">
-        <div class="orb orb-1"></div>
-        <div class="orb orb-2"></div>
-    </div>
-
-    <div class="navbar-wrapper">
-        <nav class="navbar">
-            <a href="index.html" class="logo">Mineplix Studio</a>
-
-            <ul class="desktop-links">
-                <li><a href="index.html" class="nav-link active">Home</a></li>
-                <li><a href="produk.html" class="nav-link">Produk</a></li>
-                <li><a href="portofolio.html" class="nav-link">Portofolio</a></li>
-                <li><a href="komunitas.html" class="nav-link">Komunitas</a></li>
-                <li>
-                    <button class="theme-toggle-btn" onclick="toggleTheme()" title="Ganti Mode Terang/Gelap">
-                        <svg class="theme-icon-sun" style="width:18px; height:18px; display:none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
-                        <svg class="theme-icon-moon" style="width:18px; height:18px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
-                    </button>
-                </li>
-            </ul>
-
-            <button class="theme-toggle-btn mobile-theme-btn" onclick="toggleTheme()" title="Ganti Mode Terang/Gelap">
-                <svg class="theme-icon-sun-mob" style="width:18px; height:18px; display:none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
-                <svg class="theme-icon-moon-mob" style="width:18px; height:18px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
-            </button>
-        </nav>
-    </div>
-
-    <div class="bottom-nav">
-        <a href="index.html" class="bottom-nav-item active">
-            <svg style="width:20px; height:20px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-            <span>Home</span>
-        </a>
-        <a href="produk.html" class="bottom-nav-item">
-            <svg style="width:20px; height:20px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><line x1="3" x2="21" y1="6" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-            <span>Produk</span>
-        </a>
-        <a href="portofolio.html" class="bottom-nav-item">
-            <svg style="width:20px; height:20px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-            <span>Portofolio</span>
-        </a>
-        <a href="komunitas.html" class="bottom-nav-item">
-            <svg style="width:20px; height:20px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            <span>Komunitas</span>
-        </a>
-    </div>
-
-    <section class="hero" id="home">
-        <div class="container">
-            
-            <h1 class="hero-title">
-                Create Your Design, Builds Your Minecraft Maps And Setups Your Server!</span>
-            </h1>
-            
-            <p class="hero-subtitle">
-                Buat Komunitas dan Ide mu!
-            </p>
-
-            <div class="hero-cta-group">
-                <a href="produk.html" class="btn-bubble btn-bubble-accent">
-                    Pesan Sekarang
-                    <svg style="width:18px; height:18px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                </a>
-                <a href="komunitas.html" class="btn-bubble">
-                    Konsultasi Gratis
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" id="products">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Populer Produk</h2>
-                <p class="section-desc">Pilihan Produk unggulan dan Jasa layanan favorit.</p>
-            </div>
-
-            <div class="products-grid">
-                <div class="bubble-card">
-                    <div class="card-preview">
-                        <span class="card-badge">POPULER</span>
-                        <svg style="width:36px; height:36px; color:var(--accent-primary);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><line x1="3" x2="21" y1="6" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-                    </div>
-                    <div class="card-body">
-                        <div class="card-title-row">
-                            <h3 class="card-title">Builder Maps</h3>
-                            <div class="card-price">Rp 5k - 500k</div>
-                        </div>
-                        <p class="card-desc">Buat Maps area lobby dan arena lainya menjadi terbaik dan sesuai tema minecraft sever mu!</p>
-                        <div class="card-tags">
-                            <span class="tag-pill">Builders</span>
-                            <span class="tag-pill">Maps</span>
-                            <span class="tag-pill">Minecraft</span>
-                        </div>
-                        <div class="card-footer">
-                            <a href="produk.html" class="btn-card">
-                                Lihat
-                                <svg style="width:16px; height:16px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
-                            </a>
-                        </div>
-                    </div>
+    <header>
+        <div class="container nav-container">
+            <div class="brand-logo actionable" onclick="navigateTo('/')">Mineplix</div>
+            <div class="nav-right">
+                <div class="nav-links">
+                    <div class="nav-item actionable" onclick="navigateTo('/produk')">Produk</div>
+                    <div class="nav-item actionable" onclick="navigateTo('/about')">About</div>
+                    <div class="nav-item actionable" onclick="navigateTo('/contact')">Contact</div>
                 </div>
-
-                <div class="bubble-card">
-                    <div class="card-preview">
-                        <span class="card-badge">POPULER</span>
-                        <svg style="width:36px; height:36px; color:var(--accent-primary);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><line x1="3" x2="21" y1="9" y2="9"/><line x1="9" x2="9" y1="21" y2="9"/></svg>
-                    </div>
-                    <div class="card-body">
-                        <div class="card-title-row">
-                            <h3 class="card-title">Design Grafis</h3>
-                            <div class="card-price">Rp 5k - 500k</div>
-                        </div>
-                        <p class="card-desc">Buat design komunitas atau bisnis mu! logo, ecomers dsb bahkan Resource packs dan modeling 3d minecraft/roblox sever.</p>
-                        <div class="card-tags">
-                            <span class="tag-pill">Design</span>
-                            <span class="tag-pill">Modeling 3d</span>
-                            <span class="tag-pill">Resource Packs</span>
-                        </div>
-                        <div class="card-footer">
-                            <a href="produk.html" class="btn-card">
-                                Lihat
-                                <svg style="width:16px; height:16px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bubble-card">
-                    <div class="card-preview">
-                        <span class="card-badge">Beta Coming soon</span>
-                        <svg style="width:36px; height:36px; color:var(--accent-primary);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-                    </div>
-                    <div class="card-body">
-                        <div class="card-title-row">
-                            <h3 class="card-title">Setups sever</h3>
-                            <div class="card-price">Rp 50k+</div>
-                        </div>
-                        <p class="card-desc">Jasa pembuatan Setups sever games dan website design.</p>
-                        <div class="card-tags">
-                            <span class="tag-pill">Server Setups</span>
-                            <span class="tag-pill">Website</span>
-                        </div>
-                        <div class="card-footer">
-                            <a href="produk.html" class="btn-card">
-                                Lihat
-                                <svg style="width:16px; height:16px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="more-products-container">
-                <a href="produk.html" class="btn-bubble">
-                    More Products
-                    <svg style="width:18px; height:18px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" id="faq">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Pertanyaan Sering Diajukan</h2>
-                <p class="section-desc">Jawaban cepat seputar pemesanan tema dan layanan pengembangan website.</p>
-            </div>
-
-            <div class="faq-container">
-                <div class="faq-item">
-                    <div class="faq-header" onclick="toggleFaq(this)">
-                        <div class="faq-question">Builder Mc? bagaimana sistem untuk jasa custom nya?</div>
-                        <div class="faq-icon">
-                            <svg style="width:20px; height:20px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-                        </div>
-                    </div>
-                    <div class="faq-body">Anda Bisa mengisi from untuk deisgn ukuran dan dekorasi tambahanya lalu kami proses sketsa dasar anda bisa request tambahan untuk sketsa sebanyak 3x okeh dan pembayaran deal ketika proses build di server/map anda 30% untuk melanjutkan bereskan build yang anda pesan. <br>Note tambahan pengerjaan progress 1x24 jam kalo gak sibuk/ngantri kalo sibuk paling lama 4x24 jam
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-header" onclick="toggleFaq(this)">
-                        <div class="faq-question">Design bagaimana sistem nya?</div>
-                        <div class="faq-icon">
-                            <svg style="width:20px; height:20px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-                        </div>
-                    </div>
-                    <div class="faq-body">Anda bisa request tema di from dan untuk revisi/request 3x okeh pembayaran ketika awal pemesanan di web okeh. <br>Note 2026 3d design blockbench dan teksture masih beta okeh pengerjaan design 1x24 kalo gak ngantri.
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-header" onclick="toggleFaq(this)">
-                        <div class="faq-question">Setups server dan plugin?</div>
-                        <div class="faq-icon">
-                            <svg style="width:20px; height:20px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-                        </div>
-                    </div>
-                    <div class="faq-body">
-                       Masih dalam uji coba beta anda bisa pesan tapi pertimbangan :) i need staff yang bisa bikin plugin bagus custom open carrer.mineplix.id
-                    </div>
+                <div class="theme-btn actionable" id="themeToggle" title="Toggle Theme">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
                 </div>
             </div>
         </div>
-    </section>
+    </header>
 
-    <footer class="footer" id="contact">
-        <div class="container">
-
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <a href="index.html" class="logo">Mineplix Studio</a>
-                    <p>Penyedia Layanan Jasa sever dan produk, design, maps builder dan setups.</p>
-                </div>
-
-                <div>
-                    <h4 class="footer-col-title">Produk</h4>
-                    <ul class="footer-links">
-                        <li><a href="produk.html">Maps Minecraft</a></li>
-                        <li><a href="produk.html">Resource Design server mc</a></li>
-                        <li><a href="produk.html">Plugin sever - beta</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="footer-col-title">Layanan</h4>
-                    <ul class="footer-links">
-                        <li><a href="produk.html">Builder Maps Minecraft</a></li>
-                      <li><a href="produk.html">Design Grafis</a></li>
-                      <li><a href="produk.html">Custom Web Design - beta</a></li>
-                      <li><a href="produk.html">Setups Server - beta</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="footer-col-title">Komunitas</h4>
-                    <ul class="footer-links">
-                        <li><a href="komunitas.html">Discord Server</a></li>
-                    </ul>
-                </div>
+    <section class="section-hero">
+        <main class="container">
+            <div class="hero">
+                <p class="hero-sub">
+                    Kami merancang & membangun aset digital tingkat tinggi: dari Desain Grafis, Model 3D, Setup Server, hingga Minecraft Maps Custom professional.
+                </p>
+                
+                <h1 class="hero-title">
+                    <span class="figma-selection-wrapper">
+                        <span class="figma-tag">Design</span>
+                        <span class="figma-box">
+                            Design
+                            <span class="figma-handle tl"></span>
+                            <span class="figma-handle tc"></span>
+                            <span class="figma-handle tr"></span>
+                            <span class="figma-handle ml"></span>
+                            <span class="figma-handle mr"></span>
+                            <span class="figma-handle bl"></span>
+                            <span class="figma-handle bc"></span>
+                            <span class="figma-handle br"></span>
+                            <span class="figma-cursor-badge">
+                                <svg class="figma-cursor" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M3 3l7 18 3-7 7-3L3 3z"/>
+                                </svg>
+                                <span class="figma-badge-pill">select</span>
+                            </span>
+                        </span>
+                    </span>Grafis & 3d Modeling.<br>
+                    Minecraft Servers<br>
+                    <span class="serif-italic">Custom Builder Maps & Setup.</span>
+                </h1>
             </div>
 
-            <div class="footer-bottom">
-                <div>&copy; 2026 Mineplix Studio. All rights reserved.</div>
-                <div class="social-links">
-                    <a href="#" class="social-icon" aria-label="Instagram">
-                        <svg style="width:16px; height:16px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            <div class="hero-btn actionable" onclick="navigateTo('/produk')">
+                <div class="hero-btn-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </div>
+                <span class="hero-btn-text">See Produk</span>
+            </div>
+        </main>
+    </section>
+
+    <div class="hero-spacer"></div>
+
+    <section class="section-footer">
+        <div class="ticker-bar">
+            <div class="ticker-track">
+                <div class="ticker-content">
+                    <span class="ticker-item">Custom Builder Maps</span>
+                    <span class="ticker-item">Desain Grafis Professional</span>
+                    <span class="ticker-item">3D Modeling & Assets</span>
+                    <span class="ticker-item">Minecraft Server Setup</span>
+                    <span class="ticker-item">Premium Digital Studio</span>
+                </div>
+                <div class="ticker-content">
+                    <span class="ticker-item">Custom Builder Maps</span>
+                    <span class="ticker-item">Desain Grafis Professional</span>
+                    <span class="ticker-item">3D Modeling & Assets</span>
+                    <span class="ticker-item">Minecraft Server Setup</span>
+                    <span class="ticker-item">Premium Digital Studio</span>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="container footer-content">
+                <h2 class="footer-title">Let's Connect.</h2>
+                <p class="footer-desc">
+                    Halo Salken, saya menyediakan berbagai layanan jasa dan produk yang dapat disesuaikan dengan skala dan tujuan proyek Anda. Mari terhubung dan diskusikan bagaimana kita bisa saling mendukung dan tumbuh bersama.
+                </p>
+                
+                <div class="footer-links">
+                    <a href="https://www.instagram.com/itzyga.mine?igsh=MXBvcjJ4ZWxjMjFvbw==" target="_blank" rel="noopener noreferrer" class="footer-link-item actionable">
+                        Instagram 
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                    </a>
+                    <a href="mailto:mineplixhelp@gmail.com" class="footer-link-item actionable">
+                        Email 
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
                     </a>
                 </div>
             </div>
 
-        </div>
-    </footer>
+            <div class="container footer-bottom">
+                <span class="footer-brand-text">MINEPLIX 2K26</span>
+            </div>
+        </footer>
+    </section>
+
+    <div class="scroll-top-btn actionable" id="scrollTopBtn" title="Scroll to Top" onclick="scrollToTop()">
+        <span class="scroll-text" id="scrollPercent">0%</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </div>
 
     <script>
-        function toggleFaq(element) {
-            const faqItem = element.parentElement;
-            const isActive = faqItem.classList.contains('active');
-            
-            document.querySelectorAll('.faq-item').forEach(item => {
-                item.classList.remove('active');
+        function navigateTo(url) {
+            window.location.href = url;
+        }
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
             });
-
-            if (!isActive) {
-                faqItem.classList.add('active');
-            }
         }
 
-        function toggleTheme() {
-            const htmlTag = document.documentElement;
-            const currentTheme = htmlTag.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            
-            htmlTag.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            updateThemeIcons(newTheme);
-        }
+        const themeBtn = document.getElementById('themeToggle');
+        const sunIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
+        const moonIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
 
-        function updateThemeIcons(theme) {
-            const sunIcons = document.querySelectorAll('.theme-icon-sun, .theme-icon-sun-mob');
-            const moonIcons = document.querySelectorAll('.theme-icon-moon, .theme-icon-moon-mob');
+        let isDark = true;
 
-            if (theme === 'light') {
-                sunIcons.forEach(el => el.style.display = 'block');
-                moonIcons.forEach(el => el.style.display = 'none');
+        themeBtn.addEventListener('click', () => {
+            isDark = !isDark;
+            if (isDark) {
+                document.documentElement.removeAttribute('data-theme');
+                themeBtn.innerHTML = moonIcon;
             } else {
-                sunIcons.forEach(el => el.style.display = 'none');
-                moonIcons.forEach(el => el.style.display = 'block');
+                document.documentElement.setAttribute('data-theme', 'light');
+                themeBtn.innerHTML = sunIcon;
             }
-        }
+        });
 
-        const savedTheme = localStorage.getItem('theme') || 'dark';
-        document.documentElement.setAttribute('data-theme', savedTheme);
-        updateThemeIcons(savedTheme);
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        const scrollPercentText = document.getElementById('scrollPercent');
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            
+            let scrollPercent = 0;
+            if (docHeight > 0) {
+                scrollPercent = Math.round((scrollTop / docHeight) * 100);
+            }
+
+            if (scrollPercent >= 100) {
+                scrollTopBtn.classList.add('completed');
+            } else {
+                scrollTopBtn.classList.remove('completed');
+                scrollPercentText.textContent = `${scrollPercent}%`;
+            }
+        });
+
+        document.addEventListener('contextmenu', (e) => e.preventDefault());
+
+        document.addEventListener('keydown', (e) => {
+            if (
+                e.key === 'F12' ||
+                (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'J' || e.key === 'j' || e.key === 'C' || e.key === 'c')) ||
+                (e.ctrlKey && (e.key === 'U' || e.key === 'u' || e.key === 'S' || e.key === 's'))
+            ) {
+                e.preventDefault();
+            }
+        });
+
+        setInterval(() => {
+            const startTime = performance.now();
+            debugger;
+            const endTime = performance.now();
+            if (endTime - startTime > 100) {
+                document.body.innerHTML = '';
+            }
+        }, 1000);
     </script>
 </body>
 </html>
