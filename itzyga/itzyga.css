@@ -14,8 +14,6 @@
     --badge-bg: #f4f2eb;
     --badge-text: #121212;
     --icon-color: #f4f2eb;
-    --nav-active-bg: rgba(18, 18, 18, 0.85);
-    --mobile-overlay-bg: rgba(18, 18, 18, 0.98);
     --shimmer-color: rgba(255, 255, 255, 0.04);
     --circle-color: rgba(255, 255, 255, 0.03);
 }
@@ -148,49 +146,33 @@ body {
 header {
     width: 100%;
     position: fixed;
-    top: 0;
+    top: 24px;
     left: 0;
     z-index: 100;
+    pointer-events: none;
 }
 
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     background-color: transparent;
-    backdrop-filter: blur(0px);
-    -webkit-backdrop-filter: blur(0px);
-    padding: 22px 40px;
-    box-shadow: none;
+    padding: 0 40px;
     position: relative;
     z-index: 101;
-    transition: background-color 0.4s ease, backdrop-filter 0.4s ease, padding 0.3s ease;
-}
-
-.navbar.scrolled {
-    background-color: var(--nav-active-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    padding: 16px 40px;
-}
-
-.nav-logo {
-    font-size: 1.25rem;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-    color: var(--text-main);
-    text-decoration: none;
-    transition: transform 0.1s ease, color 0.4s ease;
-}
-
-.nav-logo:active {
-    transform: scale(0.95);
+    width: 100%;
 }
 
 .nav-menu {
+    pointer-events: auto;
     display: flex;
     list-style: none;
-    gap: 36px;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 16px 34px;
+    border-radius: 50px;
 }
 
 .nav-menu a {
@@ -207,146 +189,10 @@ header {
 
 .nav-menu a.active {
     opacity: 1;
-    font-weight: 700;
-}
-
-.nav-menu a.active::before {
-    content: '•';
-    color: var(--text-main);
 }
 
 .nav-menu a:active {
     transform: scale(0.92);
-}
-
-.nav-right {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.hamburger {
-    display: none;
-    background: transparent;
-    border: none;
-    padding: 4px;
-    transition: transform 0.1s ease;
-}
-
-.hamburger svg {
-    width: 24px;
-    height: 24px;
-    fill: var(--icon-color);
-    display: block;
-    transition: fill 0.4s ease;
-}
-
-.hamburger:active {
-    transform: scale(0.88);
-}
-
-.mobile-menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: var(--mobile-overlay-bg);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 28px;
-    z-index: 9999;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: opacity 0.35s ease, visibility 0.35s ease;
-}
-
-.mobile-menu.active {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-}
-
-.mobile-header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 22px 40px;
-}
-
-.mobile-close-btn {
-    background: transparent;
-    border: none;
-    padding: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.1s ease;
-}
-
-.mobile-close-btn svg {
-    width: 24px;
-    height: 24px;
-    fill: var(--icon-color);
-    display: block;
-    transition: fill 0.4s ease;
-}
-
-.mobile-close-btn:active {
-    transform: scale(0.85);
-}
-
-.mobile-menu a {
-    text-decoration: none;
-    color: var(--text-main);
-    font-size: 2.2rem;
-    font-weight: 800;
-    font-family: 'Syne', sans-serif;
-    opacity: 0.4;
-    transform: translateY(15px);
-    transition: opacity 0.3s ease, transform 0.3s ease, color 0.4s ease;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.mobile-menu.active a {
-    transform: translateY(0);
-}
-
-.mobile-menu a.active {
-    opacity: 1;
-}
-
-.mobile-menu a .bullet {
-    display: inline-block;
-    width: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: width 0.2s ease, opacity 0.2s ease;
-}
-
-.mobile-menu a.active .bullet {
-    width: 14px;
-    opacity: 1;
-}
-
-.mobile-menu.active a:nth-child(2) { transition-delay: 0.05s; }
-.mobile-menu.active a:nth-child(3) { transition-delay: 0.1s; }
-.mobile-menu.active a:nth-child(4) { transition-delay: 0.15s; }
-.mobile-menu.active a:nth-child(5) { transition-delay: 0.2s; }
-
-.mobile-menu a:active {
-    transform: scale(0.92) !important;
 }
 
 section.snap-page {
@@ -361,22 +207,7 @@ section.snap-page {
 }
 
 .hero-section {
-    display: flex;
-    flex-direction: column;
-}
-
-.hero-top {
-    flex: 1;
-    background-color: var(--bg-top);
-    min-height: 50vh;
-    transition: background-color 0.4s ease;
-}
-
-.hero-bottom {
-    flex: 1;
-    background-color: var(--bg-bottom);
-    min-height: 50vh;
-    transition: background-color 0.4s ease;
+    background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
 }
 
 .hero-grid-bg {
@@ -456,7 +287,7 @@ section.snap-page {
 
 .scroll-down-btn {
     position: absolute;
-    bottom: 60px;
+    bottom: 50px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 20;
@@ -634,14 +465,17 @@ section.snap-page {
 }
 
 .info-card {
-    background-color: var(--card-bg);
-    padding: 20px;
-    border-radius: 14px 14px 14px 0;
-    transition: transform 0.1s ease, background-color 0.4s ease;
-    box-shadow: none;
+    background-color: var(--card-bg-project);
+    border: none;
+    border-radius: 0 16px 16px 16px;
+    padding: 40px 20px;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.15s ease, background-color 0.4s ease;
+    width: 100%;
     touch-action: manipulation;
 }
 
@@ -678,7 +512,7 @@ section.snap-page {
 }
 
 .project-section {
-    background-color: var(--bg-bottom);
+    background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
     padding: 40px;
     display: flex;
     flex-direction: column;
@@ -690,7 +524,7 @@ section.snap-page {
 .project-container {
     max-width: 1000px;
     width: 100%;
-    height: calc(100vh - 150px);
+    height: calc(80vh - 120px);
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -870,7 +704,7 @@ section.snap-page {
 
 .footer-section {
     background-color: var(--bg-top);
-    padding: 80px 40px 40px;
+    padding: 100px 40px 40px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -893,13 +727,13 @@ section.snap-page {
     justify-content: flex-start;
     align-items: flex-start;
     gap: 24px;
-    margin-top: 40px;
+    margin-top: 140px;
 }
 
 .footer-brand p {
     color: var(--text-sub);
     margin-top: 10px;
-    font-size: 0.95rem;
+    font-size: 1rem;
     transition: color 0.4s ease;
 }
 
@@ -915,7 +749,7 @@ section.snap-page {
     gap: 8px;
     color: var(--text-main);
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     font-weight: 600;
     transition: opacity 0.2s ease, transform 0.1s ease;
 }
@@ -950,7 +784,7 @@ section.snap-page {
     color: var(--text-main);
     transition: color 0.4s ease;
     font-family: 'Syne', sans-serif;
-    font-size: clamp(1rem, 2.5vw, 2rem);
+    font-size: clamp(1.3rem, 3vw, 3.8rem);
 }
 
 .about-desc,
@@ -995,24 +829,31 @@ section.snap-page {
 .footer-section.animate-in .footer-bottom { transition-delay: 0.26s; }
 
 @media (max-width: 768px) {
+    header {
+        top: 16px;
+    }
+
     .navbar {
-        padding: 16px 20px;
-    }
-
-    .navbar.scrolled {
-        padding: 12px 20px;
-    }
-
-    .mobile-header {
-        padding: 16px 20px;
+        padding: 0 12px;
     }
 
     .nav-menu {
+        display: flex;
+        gap: 12px;
+        padding: 14px 24px;
+        max-width: calc(100vw - 24px);
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .nav-menu::-webkit-scrollbar {
         display: none;
     }
 
-    .hamburger {
-        display: flex;
+    .nav-menu a {
+        font-size: 0.8rem;
     }
 
     .about-section, .project-section, .footer-section {
@@ -1024,9 +865,9 @@ section.snap-page {
         gap: 10px;
     }
 
-    .project-container {
+    .project-container, about-container, footer-container {
         height: auto;
-        max-height: calc(100vh - 120px);
+        max-height: calc(90vh - 120px);
     }
 
     .project-flex-layout {
@@ -1066,12 +907,12 @@ section.snap-page {
     }
 
     .info-card {
-        padding: 14px;
+        padding: 28px 18px;
     }
 
     .footer-links {
         flex-direction: column;
-        gap: 12px;
+        gap: 10px;
     }
 
     .scroll-top-btn {
